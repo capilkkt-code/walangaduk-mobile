@@ -101,14 +101,29 @@
             margin-left: 12px;
         }
 
-        .back-btn {
+        .refresh-btn {
             background: rgba(255,255,255,0.2);
             border: none;
             color: white;
             padding: 8px 12px;
-            border-radius: 8px;
+            border-radius: 50%;
             cursor: pointer;
             font-size: 14px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .refresh-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: rotate(180deg);
+        }
+
+        .refresh-btn:active {
+            transform: rotate(360deg) scale(0.95);
         }
 
         /* Main Content */
@@ -668,7 +683,9 @@
         <header class="header">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPXt-P9njp2vMXPwB8l_WTtmd2cjwSRVMbwzDrWQrFvMdkHDApyArzSlTvdQUS5dgy3XMaJwXCvoIbTe40Y5z4rRflGGzqYaA5WeFdHdH-gPB9dbV81C5GIX7Ietdt2yYhJxhq-gHXIoxFAUyTtcrsdCiuumnSeA93ofv9224k-oCJRJLR_cu7aMxZDPuu/s320/1-removebg-preview(1).png" alt="Logo" class="header-logo" onerror="this.src=''; this.alt='Logo tidak dapat dimuat'; this.style.display='none';">
             <h1 class="header-title">Walangaduk</h1>
-            <button class="back-btn" id="backBtn" style="display: none;" onclick="goToHome()">← Kembali</button>
+            <button class="refresh-btn" onclick="refreshApp()" title="Refresh Aplikasi">
+                <span style="font-size: 18px;">🔄</span>
+            </button>
         </header>
 
         <!-- Main Content -->
@@ -940,32 +957,122 @@
 
             <!-- Contact Page -->
             <div class="page" id="contactPage">
-                <div class="info-section fade-in">
-                    <h2 class="info-title">Kontak Kami</h2>
-                    <div class="info-illustration">📞📍</div>
-                    <p class="info-text">
-                        <strong>Alamat:</strong><br>
-                        Jl. Ir. Soekarno, Saumlaki, Kepulauan Tanimbar
+                <!-- Header Section -->
+                <div class="info-section fade-in" style="text-align: center; background: linear-gradient(135deg, #003366, #0066cc); color: white; margin-bottom: 25px;">
+                    <h2 style="color: white; margin-bottom: 15px; font-size: 24px; font-weight: 600;">📞 Hubungi Kami</h2>
+                    <div style="font-size: 48px; margin: 20px 0;">🏛️📍</div>
+                    <p style="font-size: 16px; font-style: italic; font-weight: 500; margin: 0; line-height: 1.5; opacity: 0.95;">
+                        Siap melayani Anda dengan sepenuh hati<br>
+                        <span style="font-size: 14px;">Dinas Kependudukan dan Pencatatan Sipil Kabupaten Kepulauan Tanimbar</span>
                     </p>
-                    <p class="info-text">
-                        <strong>Email:</strong> disdukcapil@tanimbar.go.id<br>
-                        <strong>Telepon:</strong> (0918) 21234
-                    </p>
-                    
-                    <div class="contact-buttons">
-                        <a href="tel:+6291821234" class="contact-btn">
-                            <span class="contact-icon">📞</span>
-                            Telepon Kami
-                        </a>
-                        <a href="https://wa.me/6291821234" target="_blank" rel="noopener noreferrer" class="contact-btn">
-                            <span class="contact-icon">💬</span>
-                            Chat WhatsApp
-                        </a>
-                        <a href="https://tanimbar.go.id" target="_blank" rel="noopener noreferrer" class="contact-btn">
-                            <span class="contact-icon">🌐</span>
-                            Kunjungi Website
-                        </a>
+                </div>
+
+                <!-- Contact Information Cards -->
+                <div style="display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 25px;">
+                    <!-- Address Card -->
+                    <div class="info-section fade-in" style="background: linear-gradient(135deg, #f8f9fa, #ffffff); border-left: 4px solid #003366;">
+                        <div style="display: flex; align-items: flex-start; gap: 15px;">
+                            <div style="background: linear-gradient(135deg, #003366, #0066cc); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;">📍</div>
+                            <div style="flex: 1;">
+                                <h3 style="font-size: 16px; font-weight: 600; color: #003366; margin-bottom: 8px;">Alamat Kantor</h3>
+                                <p style="margin: 0; color: #555; line-height: 1.5; font-size: 15px;">
+                                    Jl. Ir. Soekarno, Saumlaki<br>
+                                    Kepulauan Tanimbar, Maluku<br>
+                                    Indonesia
+                                </p>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Phone Card -->
+                    <div class="info-section fade-in" style="background: linear-gradient(135deg, #f8f9fa, #ffffff); border-left: 4px solid #0066cc;">
+                        <div style="display: flex; align-items: flex-start; gap: 15px;">
+                            <div style="background: linear-gradient(135deg, #0066cc, #F7A400); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;">📞</div>
+                            <div style="flex: 1;">
+                                <h3 style="font-size: 16px; font-weight: 600; color: #003366; margin-bottom: 8px;">Telepon & Email</h3>
+                                <p style="margin: 0; color: #555; line-height: 1.8; font-size: 15px;">
+                                    <strong>Telepon:</strong> (0918) 21234<br>
+                                    <strong>Email:</strong> disdukcapil@tanimbar.go.id<br>
+                                    <strong>WhatsApp:</strong> +62 918 21234
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Working Hours Card -->
+                    <div class="info-section fade-in" style="background: linear-gradient(135deg, #f8f9fa, #ffffff); border-left: 4px solid #F7A400;">
+                        <div style="display: flex; align-items: flex-start; gap: 15px;">
+                            <div style="background: linear-gradient(135deg, #F7A400, #003366); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;">🕒</div>
+                            <div style="flex: 1;">
+                                <h3 style="font-size: 16px; font-weight: 600; color: #003366; margin-bottom: 8px;">Jam Pelayanan</h3>
+                                <p style="margin: 0; color: #555; line-height: 1.8; font-size: 15px;">
+                                    <strong>Senin - Kamis:</strong> 08:00 - 15:30<br>
+                                    <strong>Jumat:</strong> 08:00 - 11:30<br>
+                                    <strong>Sabtu - Minggu:</strong> Tutup
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Section -->
+                <div class="info-section fade-in" style="padding: 0; overflow: hidden;">
+                    <div style="background: linear-gradient(135deg, #003366, #0066cc); color: white; padding: 20px; text-align: center;">
+                        <h3 style="margin: 0; font-size: 18px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <span style="font-size: 24px;">🗺️</span>
+                            Lokasi Kantor Kami
+                        </h3>
+                        <p style="margin: 10px 0 0 0; font-size: 14px; opacity: 0.9;">Temukan kami di peta untuk kunjungan langsung</p>
+                    </div>
+                    <div style="position: relative; width: 100%; height: 300px; background: #f8f9fa;">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d987.. !2d131.. !3d-7.. !2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d2755c0292f2a65%3A0x97d389f87f0d32!2sDinas%20Kependudukan%20dan%20Catatan%20Sipil%20Kabupaten%20Tanimbar!5e0!3m2!1sid!2sid!4v. !5m2!1sid!2sid" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0; display: block;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Lokasi Dinas Kependudukan dan Pencatatan Sipil Kabupaten Tanimbar">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Buttons -->
+                <div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 25px;">
+                    <a href="tel:+6291821234" style="display: flex; align-items: center; padding: 18px 20px; background: linear-gradient(135deg, #003366, #0066cc); color: white; border-radius: 12px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,51,102,0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0,51,102,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,51,102,0.2)'">
+                        <span style="font-size: 24px; margin-right: 15px;">📞</span>
+                        <div>
+                            <div style="font-size: 16px; margin-bottom: 2px;">Telepon Langsung</div>
+                            <div style="font-size: 12px; opacity: 0.9;">Hubungi kami untuk informasi cepat</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://wa.me/6291821234" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; padding: 18px 20px; background: linear-gradient(135deg, #25D366, #128C7E); color: white; border-radius: 12px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(37,211,102,0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(37,211,102,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(37,211,102,0.2)'">
+                        <span style="font-size: 24px; margin-right: 15px;">💬</span>
+                        <div>
+                            <div style="font-size: 16px; margin-bottom: 2px;">Chat WhatsApp</div>
+                            <div style="font-size: 12px; opacity: 0.9;">Konsultasi mudah via WhatsApp</div>
+                        </div>
+                    </a>
+                    
+                    <a href="https://dukcapil.tanimbar.go.id" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; padding: 18px 20px; background: linear-gradient(135deg, #F7A400, #FF6B35); color: white; border-radius: 12px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(247,164,0,0.2);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(247,164,0,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(247,164,0,0.2)'">
+                        <span style="font-size: 24px; margin-right: 15px;">🌐</span>
+                        <div>
+                            <div style="font-size: 16px; margin-bottom: 2px;">Website Resmi Dinas</div>
+                            <div style="font-size: 12px; opacity: 0.9;">Kunjungi portal resmi kami</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="info-section fade-in" style="text-align: center; background: linear-gradient(135deg, #e8f4fd, #d1e7dd); border: 2px solid #0066cc; margin-top: 25px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent); animation: shimmer 3s infinite;"></div>
+                    <div style="font-size: 32px; margin-bottom: 15px;">🤝</div>
+                    <p style="font-style: italic; color: #003366; font-weight: 600; margin: 0; font-size: 16px; line-height: 1.5; position: relative; z-index: 2;">
+                        "Kami siap membantu Anda dengan pelayanan terbaik"<br>
+                        <span style="font-size: 14px; font-weight: 400;">Tim Dinas Kependudukan dan Pencatatan Sipil</span>
+                    </p>
                 </div>
             </div>
         </main>
@@ -1031,13 +1138,7 @@
                 navItems[navMap[pageId]].classList.add('active');
             }
 
-            // Show/hide back button
-            const backBtn = document.getElementById('backBtn');
-            if (pageId === 'homePage') {
-                backBtn.style.display = 'none';
-            } else {
-                backBtn.style.display = 'block';
-            }
+            // No need to show/hide back button anymore since it's removed
 
             // Add fade-in animation
             const activeContent = document.getElementById(pageId);
@@ -1058,6 +1159,34 @@
 
         function goToHome() {
             showPage('homePage');
+        }
+
+        function refreshApp() {
+            // Add rotation animation to refresh button
+            const refreshBtn = document.querySelector('.refresh-btn');
+            refreshBtn.style.transform = 'rotate(360deg)';
+            
+            // Reset the app to initial state
+            setTimeout(() => {
+                // Go back to home page
+                showPage('homePage');
+                
+                // Reset any form data or states
+                const iframe = document.querySelector('.form-iframe');
+                if (iframe) {
+                    iframe.src = iframe.src; // Reload iframe
+                }
+                
+                // Reset refresh button rotation
+                refreshBtn.style.transform = 'rotate(0deg)';
+                
+                // Show a subtle feedback
+                refreshBtn.style.background = 'rgba(255,255,255,0.4)';
+                setTimeout(() => {
+                    refreshBtn.style.background = 'rgba(255,255,255,0.2)';
+                }, 200);
+                
+            }, 300);
         }
 
         // Handle navigation clicks
@@ -1086,5 +1215,5 @@
             // Add any additional initialization here
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9927145002a1fde4',t:'MTc2MTExNjAyNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9927a87fa33d9a98',t:'MTc2MTEyMjA5NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
