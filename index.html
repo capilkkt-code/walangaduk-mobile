@@ -70,6 +70,15 @@
     .mobile-menu.open {
       max-height: 300px;
     }
+    .feature-card {
+      background: linear-gradient(135deg, rgba(12, 35, 64, 0.05) 0%, rgba(26, 75, 140, 0.05) 100%);
+      border: 1px solid rgba(212, 168, 83, 0.2);
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      border-color: #d4a853;
+      box-shadow: 0 12px 24px rgba(212, 168, 83, 0.15);
+    }
   </style>
   <style>body { box-sizing: border-box; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
@@ -118,11 +127,6 @@
          <h2 id="heroSubtitle" class="text-xl sm:text-2xl lg:text-3xl font-semibold text-[#d4a853] mb-2">Pelayanan Administrasi Kependudukan Online</h2>
          <h3 class="text-lg sm:text-xl text-white/80 mb-6">Kabupaten Kepulauan Tanimbar</h3>
          <p class="text-base sm:text-lg text-white/70 mb-8 max-w-xl mx-auto lg:mx-0">"Mengurus dokumen kependudukan kini lebih mudah, cepat, dan transparan melalui layanan digital."</p>
-         <div class="flex flex-col gap-4 justify-center lg:justify-start">
-          <button onclick="openRegistrationPopup()" class="bg-white/10 backdrop-blur-sm border-2 border-white/30 px-8 py-3.5 rounded-full text-white font-semibold text-base hover:bg-white/20 transition-all inline-flex items-center justify-center">
-           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-           </svg> Lihat Jenis Layanan </button>
-         </div>
         </div><!-- Hero Illustration -->
         <div class="hidden lg:block relative">
          <div class="floating">
@@ -236,44 +240,6 @@
         </div>
        </div>
       </div>
-     </div><!-- Statistics Section -->
-     <div class="bg-[#0c2340] py-12 sm:py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-        <div class="text-center">
-         <div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#d4a853] mb-2">
-          10+
-         </div>
-         <div class="text-white/70 text-sm sm:text-base">
-          Jenis Layanan
-         </div>
-        </div>
-        <div class="text-center">
-         <div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#d4a853] mb-2">
-          24/7
-         </div>
-         <div class="text-white/70 text-sm sm:text-base">
-          Akses Online
-         </div>
-        </div>
-        <div class="text-center">
-         <div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#d4a853] mb-2">
-          100%
-         </div>
-         <div class="text-white/70 text-sm sm:text-base">
-          Digital
-         </div>
-        </div>
-        <div class="text-center">
-         <div class="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#d4a853] mb-2">
-          Gratis
-         </div>
-         <div class="text-white/70 text-sm sm:text-base">
-          Tanpa Biaya
-         </div>
-        </div>
-       </div>
-      </div>
      </div>
     </section><!-- INFORMASI SECTION -->
     <section id="informasi" class="section">
@@ -320,8 +286,8 @@
            4
           </div>
           <div class="flex-1 bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-100">
-           <h3 class="font-bold text-[#0c2340] text-base sm:text-lg mb-2">Verifikasi Petugas</h3>
-           <p class="text-gray-600 text-sm sm:text-base">Permohonan diverifikasi oleh petugas Disdukcapil untuk memastikan kelengkapan dan kebenaran data.</p>
+           <h3 class="font-bold text-[#0c2340] text-base sm:text-lg mb-2">Kirim Permohonan</h3>
+           <p class="text-gray-600 text-sm sm:text-base">Permohonan dikirim oleh operator secara online.</p>
           </div>
          </div>
          <div class="flex items-start space-x-4 sm:space-x-6 fade-in">
@@ -329,8 +295,8 @@
            5
           </div>
           <div class="flex-1 bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-100">
-           <h3 class="font-bold text-[#0c2340] text-base sm:text-lg mb-2">Proses Dokumen</h3>
-           <p class="text-gray-600 text-sm sm:text-base">Dokumen diproses oleh sistem pelayanan sesuai standar waktu yang ditetapkan.</p>
+           <h3 class="font-bold text-[#0c2340] text-base sm:text-lg mb-2">Verifikasi Petugas</h3>
+           <p class="text-gray-600 text-sm sm:text-base">Permohonan diverifikasi oleh petugas Disdukcapil untuk memastikan kelengkapan dan kebenaran data.</p>
           </div>
          </div>
          <div class="flex items-start space-x-4 sm:space-x-6 fade-in">
@@ -338,74 +304,164 @@
            6
           </div>
           <div class="flex-1 bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-100">
-           <h3 class="font-bold text-[#0c2340] text-base sm:text-lg mb-2">Dokumen Diterbitkan</h3>
-           <p class="text-gray-600 text-sm sm:text-base">Dokumen kependudukan diterbitkan dan dapat diambil di kantor atau dikirim sesuai ketentuan.</p>
+           <h3 class="font-bold text-[#0c2340] text-base sm:text-lg mb-2">Proses Dokumen</h3>
+           <p class="text-gray-600 text-sm sm:text-base">Dokumen diproses oleh sistem pelayanan sesuai standar waktu yang ditetapkan setelah itu dokumen diterbitkan</p>
           </div>
          </div>
         </div>
-       </div><!-- CTA -->
-       <div class="mt-12 text-center"><a href="https://script.google.com/macros/s/AKfycbwW0g2-Gp3YXH-HXF-T8YSv2BaQ14YzTsfsZ4fZ7e1hyfzYHVQO_28EnEOv1BJda8Gg/exec" target="_blank" rel="noopener noreferrer" class="inline-flex items-center btn-gold px-8 py-4 rounded-full text-[#0c2340] font-bold text-base shadow-xl">
-         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-         </svg> Mulai Ajukan Permohonan </a>
        </div>
       </div>
      </div>
     </section><!-- TENTANG KAMI SECTION -->
     <section id="tentang" class="section">
-     <div class="gradient-hero py-12 sm:py-16">
+     <div class="gradient-hero py-16 sm:py-20">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-       <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">Tentang WALANGADUK</h1>
-       <p class="text-white/70 text-base sm:text-lg">Sistem Pelayanan Administrasi Kependudukan Digital</p>
+       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Tentang WALANGADUK</h1>
+       <p class="text-white/80 text-lg sm:text-xl">Walang Administrasi Kependudukan dan Pencatatan Sipil</p>
+       <div class="mt-6 inline-flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full"><span class="w-2 h-2 bg-[#d4a853] rounded-full mr-2 animate-pulse"></span> <span class="text-white/90 text-sm font-medium">Inovasi Digital untuk Pulau-Pulau Kecil</span>
+       </div>
       </div>
      </div>
-     <div class="py-12 sm:py-16 lg:py-20 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-       <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center"><!-- Content -->
-        <div class="fade-in">
-         <div class="inline-flex items-center bg-[#0c2340]/10 px-4 py-2 rounded-full mb-6"><span class="w-2 h-2 bg-[#d4a853] rounded-full mr-2"></span> <span class="text-[#0c2340] text-sm font-semibold">Inovasi untuk Pulau-Pulau Kecil</span>
+     <div class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+       <!-- Section 1: Pengenalan WALANGADUK -->
+       <div class="fade-in">
+        <div class="bg-white rounded-2xl p-8 sm:p-12 shadow-xl border border-gray-100">
+         <div class="inline-flex items-center bg-[#0c2340]/10 px-4 py-2 rounded-full mb-8"><span class="w-2 h-2 bg-[#d4a853] rounded-full mr-2"></span> <span class="text-[#0c2340] text-sm font-semibold">Tentang Aplikasi</span>
          </div>
-         <h2 class="text-2xl sm:text-3xl font-bold text-[#0c2340] mb-6">Membawa Perubahan di Kepulauan Tanimbar</h2>
-         <p class="text-gray-600 text-base sm:text-lg mb-6 leading-relaxed"><strong>WALANGADUK</strong> hadir sebagai solusi transformatif untuk masyarakat Kabupaten Kepulauan Tanimbar. Kami memahami tantangan unik yang dihadapi pulau-pulau kecil: jarak geografis yang jauh, akses terbatas, dan proses administrasi yang rumit. Sistem kami dirancang khusus untuk <span class="text-[#d4a853] font-semibold">menghubungkan</span> masyarakat dengan layanan pemerintah tanpa harus meninggalkan pulau mereka.</p>
-         <p class="text-gray-600 text-base sm:text-lg mb-6 leading-relaxed">Dengan WALANGADUK, setiap warga dapat mengajukan permohonan dokumen kependudukan kapan saja dan di mana saja—melalui perangkat mereka. Proses yang sebelumnya memakan waktu berminggu-minggu kini dapat diselesaikan dalam hitungan hari. <span class="text-[#d4a853] font-semibold">Transparansi</span> penuh memberikan warga kepastian dan kemudahan dalam memantau status permohonan mereka.</p>
-         <div class="space-y-4">
-          <div class="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-md border border-gray-100">
-           <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-[#d4a853] to-[#f0c674] rounded-lg flex items-center justify-center">
-            <svg class="w-5 h-5 text-[#0c2340]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-           </div>
-           <div>
-            <h4 class="font-semibold text-[#0c2340] mb-1">Menghilangkan Hambatan Geografis</h4>
-            <p class="text-gray-600 text-sm">Pulau menjadi dekat dengan teknologi. Tidak perlu perjalanan panjang dan biaya tambahan untuk mengurus dokumen penting.</p>
+         <h2 class="text-3xl sm:text-4xl font-bold text-[#0c2340] mb-8">Apa itu WALANGADUK?</h2>
+         <div class="prose prose-lg max-w-none text-gray-700 space-y-6">
+          <p class="text-lg leading-relaxed"><strong class="text-[#0c2340] text-xl">WALANGADUK</strong> <span class="text-[#d4a853] font-semibold">(Walang Administrasi Kependudukan dan Pencatatan Sipil)</span> merupakan sebuah aplikasi pelayanan digital yang digunakan oleh Petugas Walangaduk di desa untuk mengajukan permohonan dokumen administrasi kependudukan dan pencatatan sipil secara online kepada Dinas Kependudukan dan Pencatatan Sipil Kabupaten Kepulauan Tanimbar.</p>
+          <p class="text-lg leading-relaxed">Aplikasi ini dikembangkan sebagai bentuk <span class="text-[#d4a853] font-semibold">inovasi pelayanan publik</span> dalam rangka mendekatkan layanan administrasi kependudukan kepada masyarakat hingga ke tingkat desa. Melalui sistem Walangaduk, petugas desa dapat membantu masyarakat dalam mengurus berbagai dokumen kependudukan secara lebih cepat, mudah, dan terintegrasi tanpa harus selalu datang langsung ke kantor pelayanan.</p>
+          <p class="text-lg leading-relaxed">Dengan memanfaatkan teknologi informasi, Walangaduk memungkinkan proses pengajuan dokumen dilakukan secara digital, sehingga mempermudah proses verifikasi dan mempercepat penerbitan dokumen oleh petugas pada Dinas Kependudukan dan Pencatatan Sipil.</p>
+          <p class="text-lg leading-relaxed">Melalui aplikasi ini, Pemerintah Kabupaten Kepulauan Tanimbar terus berkomitmen untuk menghadirkan <span class="text-[#d4a853] font-semibold">pelayanan publik yang lebih efektif, transparan, dan responsif</span>, serta memastikan setiap warga negara memperoleh dokumen kependudukan sebagai identitas hukum yang sah.</p>
+         </div>
+        </div>
+       </div><!-- Section 2: Visi & Misi Grid -->
+       <div class="fade-in">
+        <div class="grid lg:grid-cols-2 gap-8">
+         <!-- Visi -->
+         <div class="feature-card bg-white rounded-2xl p-10 shadow-xl border border-gray-100 hover:shadow-2xl transition-all">
+          <div class="w-16 h-16 bg-gradient-to-br from-[#d4a853] to-[#f0c674] rounded-xl flex items-center justify-center mb-8 shadow-lg">
+           <svg class="w-8 h-8 text-[#0c2340]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+           </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0c2340] mb-6">Visi</h3>
+          <p class="text-gray-700 leading-relaxed text-lg">Mewujudkan pelayanan administrasi kependudukan dan pencatatan sipil yang <span class="font-semibold">modern, cepat, transparan, dan mudah diakses</span> oleh masyarakat hingga ke tingkat desa melalui pemanfaatan teknologi digital.</p>
+         </div><!-- Misi -->
+         <div class="feature-card bg-white rounded-2xl p-10 shadow-xl border border-gray-100 hover:shadow-2xl transition-all">
+          <div class="w-16 h-16 bg-gradient-to-br from-[#1a4b8c] to-[#5a9fd4] rounded-xl flex items-center justify-center mb-8 shadow-lg">
+           <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+           </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-[#0c2340] mb-6">Misi</h3>
+          <ul class="space-y-4 text-gray-700">
+           <li class="flex items-start"><span class="w-3 h-3 bg-[#d4a853] rounded-full mr-4 mt-1 flex-shrink-0"></span><span class="text-base">Meningkatkan kualitas pelayanan administrasi kependudukan melalui sistem berbasis digital</span></li>
+           <li class="flex items-start"><span class="w-3 h-3 bg-[#d4a853] rounded-full mr-4 mt-1 flex-shrink-0"></span><span class="text-base">Mempercepat proses pengajuan dan verifikasi dokumen secara online</span></li>
+           <li class="flex items-start"><span class="w-3 h-3 bg-[#d4a853] rounded-full mr-4 mt-1 flex-shrink-0"></span><span class="text-base">Mendekatkan layanan ke masyarakat melalui peran aktif petugas desa</span></li>
+           <li class="flex items-start"><span class="w-3 h-3 bg-[#d4a853] rounded-full mr-4 mt-1 flex-shrink-0"></span><span class="text-base">Mewujudkan pelayanan yang transparan, akuntabel, dan efisien</span></li>
+          </ul>
+         </div>
+        </div>
+       </div><!-- Section 3: Tujuan -->
+       <div class="fade-in">
+        <div class="bg-white rounded-2xl p-10 shadow-xl border border-gray-100">
+         <h3 class="text-2xl sm:text-3xl font-bold text-[#0c2340] mb-10">🎯 Tujuan WALANGADUK</h3>
+         <div class="grid sm:grid-cols-2 gap-6">
+          <div class="feature-card bg-gradient-to-br from-[#0c2340]/5 to-[#1a4b8c]/5 rounded-xl p-6 border border-[#d4a853]/20">
+           <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#d4a853] to-[#f0c674] rounded-lg flex items-center justify-center">
+             <svg class="w-6 h-6 text-[#0c2340]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+             </svg>
+            </div>
+            <div>
+             <h4 class="font-semibold text-[#0c2340] text-lg mb-2">Kemudahan Akses</h4>
+             <p class="text-gray-600 text-base">Mempermudah masyarakat dalam mengurus dokumen kependudukan</p>
+            </div>
            </div>
           </div>
-          <div class="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-md border border-gray-100">
-           <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-[#0c2340] to-[#1a4b8c] rounded-lg flex items-center justify-center">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-           </div>
-           <div>
-            <h4 class="font-semibold text-[#0c2340] mb-1">Efisiensi dan Kecepatan</h4>
-            <p class="text-gray-600 text-sm">Sistem digital menghilangkan birokrasi yang tidak perlu. Proses yang dulunya membutuhkan waktu lama kini berjalan otomatis dan terukur.</p>
+          <div class="feature-card bg-gradient-to-br from-[#1a4b8c]/5 to-[#5a9fd4]/5 rounded-xl p-6 border border-[#d4a853]/20">
+           <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#1a4b8c] to-[#5a9fd4] rounded-lg flex items-center justify-center">
+             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+             </svg>
+            </div>
+            <div>
+             <h4 class="font-semibold text-[#0c2340] text-lg mb-2">Kecepatan Proses</h4>
+             <p class="text-gray-600 text-base">Mempercepat proses pelayanan administrasi kependudukan dan pencatatan sipil</p>
+            </div>
            </div>
           </div>
-          <div class="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-md border border-gray-100">
-           <div class="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-[#1a4b8c] to-[#5a9fd4] rounded-lg flex items-center justify-center">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-            </svg>
+          <div class="feature-card bg-gradient-to-br from-[#0c2340]/5 to-[#1a4b8c]/5 rounded-xl p-6 border border-[#d4a853]/20">
+           <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#0c2340] to-[#1a4b8c] rounded-lg flex items-center justify-center">
+             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+             </svg>
+            </div>
+            <div>
+             <h4 class="font-semibold text-[#0c2340] text-lg mb-2">Efektivitas</h4>
+             <p class="text-gray-600 text-base">Meningkatkan efektivitas dan efisiensi pelayanan publik</p>
+            </div>
            </div>
-           <div>
-            <h4 class="font-semibold text-[#0c2340] mb-1">Keterbukaan dan Akuntabilitas</h4>
-            <p class="text-gray-600 text-sm">Setiap langkah proses dapat dipantau. Warga tahu kapan berkas mereka diproses, diverifikasi, atau siap diambil.</p>
+          </div>
+          <div class="feature-card bg-gradient-to-br from-[#d4a853]/5 to-[#f0c674]/5 rounded-xl p-6 border border-[#d4a853]/20">
+           <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#d4a853] to-[#f0c674] rounded-lg flex items-center justify-center">
+             <svg class="w-6 h-6 text-[#0c2340]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+             </svg>
+            </div>
+            <div>
+             <h4 class="font-semibold text-[#0c2340] text-lg mb-2">Tertib Administrasi</h4>
+             <p class="text-gray-600 text-base">Mendukung tertib administrasi kependudukan di Kabupaten Kepulauan Tanimbar</p>
+            </div>
            </div>
           </div>
          </div>
-         <div class="mt-8 p-6 bg-gradient-to-r from-[#d4a853]/10 to-[#0c2340]/10 rounded-xl border border-[#d4a853]/30">
-          <p class="text-[#0c2340] font-semibold text-lg">💡 <span class="ml-2">WALANGADUK bukan hanya sistem digital—ini adalah komitmen kami untuk memberdayakan setiap warga Tanimbar dengan akses yang setara terhadap layanan publik berkualitas.</span></p>
+        </div>
+       </div><!-- Section 4: Manfaat -->
+       <div class="fade-in">
+        <div class="grid lg:grid-cols-2 gap-8">
+         <!-- Manfaat Masyarakat -->
+         <div class="bg-gradient-to-br from-[#0c2340] to-[#1a4b8c] rounded-2xl p-10 shadow-xl text-white border-2 border-[#d4a853]/30">
+          <div class="w-16 h-16 bg-white/15 backdrop-blur-sm rounded-xl flex items-center justify-center mb-8 shadow-lg">
+           <svg class="w-8 h-8 text-[#d4a853]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+           </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-8">👥 Manfaat Bagi Masyarakat</h3>
+          <ul class="space-y-5">
+           <li class="flex items-start"><span class="w-3 h-3 bg-[#d4a853] rounded-full mr-4 mt-2 flex-shrink-0"></span> <span class="text-white/95 text-lg leading-relaxed">Mempermudah pengurusan dokumen kependudukan</span></li>
+           <li class="flex items-start"><span class="w-3 h-3 bg-[#d4a853] rounded-full mr-4 mt-2 flex-shrink-0"></span> <span class="text-white/95 text-lg leading-relaxed">Menghemat waktu dan biaya perjalanan ke kantor pelayanan</span></li>
+           <li class="flex items-start"><span class="w-3 h-3 bg-[#d4a853] rounded-full mr-4 mt-2 flex-shrink-0"></span> <span class="text-white/95 text-lg leading-relaxed">Mendapatkan pelayanan yang lebih cepat dan transparan</span></li>
+          </ul>
+         </div><!-- Manfaat Pemerintah -->
+         <div class="bg-gradient-to-br from-[#1a4b8c] to-[#5a9fd4] rounded-2xl p-10 shadow-xl text-white border-2 border-[#d4a853]/30">
+          <div class="w-16 h-16 bg-white/15 backdrop-blur-sm rounded-xl flex items-center justify-center mb-8 shadow-lg">
+           <svg class="w-8 h-8 text-[#d4a853]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4 2 2 0 000-4zm0 2a2 2 0 100 4 2 2 0 000-4zm0 2a2 2 0 100 4 2 2 0 000-4zm0 2a2 2 0 100 4 2 2 0 000-4zm0 2a2 2 0 100 4 2 2 0 000-4zm12-4v6m0-6a2 2 0 100 4 2 2 0 000-4zm0 2a2 2 0 100 4 2 2 0 000-4zm0 2a2 2 0 100 4 2 2 0 000-4zm0 2a2 2 0 100 4 2 2 0 000-4zm0 2a2 2 0 100 4 2 2 0 000-4zM0 12a2 2 0 100 4 2 2 0 000-4zm0 2a2 2 0 100 4 2 2 0 000-4zm0 2a2 2 0 100 4 2 2 0 000-4zm0 2a2 2 0 100 4 2 2 0 000-4zm0 2a2 2 0 100 4 2 2 0 000-4z" />
+           </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-8">🏛️ Manfaat Bagi Pemerintah</h3>
+          <ul class="space-y-5">
+           <li class="flex items-start"><span class="w-3 h-3 bg-[#d4a853] rounded-full mr-4 mt-2 flex-shrink-0"></span> <span class="text-white/95 text-lg leading-relaxed">Meningkatkan efisiensi proses pelayanan administrasi kependudukan</span></li>
+           <li class="flex items-start"><span class="w-3 h-3 bg-[#d4a853] rounded-full mr-4 mt-2 flex-shrink-0"></span> <span class="text-white/95 text-lg leading-relaxed">Mempercepat proses pengelolaan data kependudukan</span></li>
+           <li class="flex items-start"><span class="w-3 h-3 bg-[#d4a853] rounded-full mr-4 mt-2 flex-shrink-0"></span> <span class="text-white/95 text-lg leading-relaxed">Mendukung digitalisasi pelayanan publik di daerah</span></li>
+          </ul>
          </div>
-        </div><!-- Illustration -->
-        <div class="hidden lg:block">
-         <svg viewbox="0 0 400 400" class="w-full max-w-md mx-auto floating"><!-- Background --> <circle cx="200" cy="200" r="180" fill="rgba(12,35,64,0.05)" /> <circle cx="200" cy="200" r="140" fill="rgba(26,75,140,0.1)" /> <!-- Computer/Screen --> <rect x="100" y="120" width="200" height="140" rx="10" fill="#0c2340" /> <rect x="110" y="130" width="180" height="110" rx="5" fill="#1a4b8c" /> <!-- Screen Content --> <rect x="125" y="145" width="60" height="8" rx="2" fill="#5a9fd4" /> <rect x="125" y="160" width="150" height="5" rx="2" fill="rgba(255,255,255,0.3)" /> <rect x="125" y="170" width="120" height="5" rx="2" fill="rgba(255,255,255,0.3)" /> <rect x="125" y="180" width="140" height="5" rx="2" fill="rgba(255,255,255,0.3)" /> <!-- Button on screen --> <rect x="125" y="200" width="70" height="25" rx="5" fill="#d4a853" /> <rect x="135" y="208" width="50" height="8" rx="2" fill="#0c2340" /> <!-- Check marks --> <circle cx="260" cy="155" r="12" fill="#d4a853" /> <path d="M254 155 L258 159 L266 151" stroke="#0c2340" stroke-width="3" fill="none" /> <circle cx="260" cy="185" r="12" fill="#5a9fd4" /> <path d="M254 185 L258 189 L266 181" stroke="white" stroke-width="3" fill="none" /> <!-- Stand --> <rect x="180" y="260" width="40" height="10" rx="2" fill="#0c2340" /> <rect x="160" y="270" width="80" height="8" rx="2" fill="#1a4b8c" /> <!-- Documents --> <rect x="60" y="200" width="50" height="65" rx="4" fill="white" transform="rotate(-10 85 232)" /> <rect x="65" y="210" width="35" height="4" rx="1" fill="#0c2340" transform="rotate(-10 82 212)" /> <rect x="65" y="220" width="40" height="3" rx="1" fill="#5a9fd4" transform="rotate(-10 85 221)" /> <rect x="65" y="228" width="30" height="3" rx="1" fill="#5a9fd4" transform="rotate(-10 80 229)" /> <rect x="290" y="200" width="50" height="65" rx="4" fill="white" transform="rotate(10 315 232)" /> <rect x="295" y="210" width="35" height="4" rx="1" fill="#d4a853" transform="rotate(10 312 212)" /> <rect x="295" y="220" width="40" height="3" rx="1" fill="#1a4b8c" transform="rotate(10 315 221)" /> <rect x="295" y="228" width="30" height="3" rx="1" fill="#1a4b8c" transform="rotate(10 310 229)" /> <!-- People silhouettes --> <circle cx="80" cy="320" r="18" fill="#d4a853" /> <rect x="60" y="345" width="40" height="50" rx="8" fill="#0c2340" /> <circle cx="320" cy="320" r="18" fill="#5a9fd4" /> <rect x="300" y="345" width="40" height="50" rx="8" fill="#1a4b8c" />
-         </svg>
+        </div>
+       </div><!-- Section 5: Komitmen Banner -->
+       <div class="fade-in">
+        <div class="bg-gradient-to-r from-[#d4a853]/20 via-[#0c2340]/20 to-[#d4a853]/20 rounded-2xl p-10 sm:p-12 border-2 border-[#d4a853]/50 backdrop-blur-sm shadow-xl">
+         <div class="flex flex-col sm:flex-row items-center space-y-5 sm:space-y-0 sm:space-x-8">
+          <div class="flex-shrink-0">
+           <div class="w-20 h-20 bg-gradient-to-br from-[#d4a853] to-[#f0c674] rounded-2xl flex items-center justify-center shadow-lg">
+            <svg class="w-10 h-10 text-[#0c2340]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+           </div>
+          </div>
+          <div>
+           <h3 class="text-2xl sm:text-3xl font-bold text-[#0c2340] mb-3">💫 Komitmen Kami</h3>
+           <p class="text-gray-800 text-lg leading-relaxed">Pemerintah Kabupaten Kepulauan Tanimbar berkomitmen untuk terus menghadirkan inovasi yang memberdayakan masyarakat dengan akses yang setara terhadap layanan administrasi kependudukan berkualitas tinggi, transparan, dan responsif.</p>
+          </div>
+         </div>
         </div>
        </div>
       </div>
@@ -464,7 +520,16 @@
              </svg>
             </div>
             <div>
-             <h4 class="font-semibold text-[#0c2340] mb-1">WhatsApp Layanan</h4><a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="text-[#25D366] hover:underline text-sm sm:text-base font-medium">+62 812-3456-7890</a>
+             <h4 class="font-semibold text-[#0c2340] mb-1">WhatsApp Layanan</h4><a href="javascript:void(0);" onclick="sendWhatsAppMessage()" class="text-[#25D366] hover:underline text-sm sm:text-base font-medium" id="whatsappLink">+62 812-3456-7890</a>
+            </div>
+           </div>
+           <div class="flex items-start space-x-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#0c2340] to-[#1a4b8c] rounded-xl flex items-center justify-center">
+             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+             </svg>
+            </div>
+            <div>
+             <h4 class="font-semibold text-[#0c2340] mb-1">Website Resmi</h4><a href="https://dukcapil.tanimbar.go.id" target="_blank" rel="noopener noreferrer" class="text-[#0c2340] hover:text-[#1a4b8c] text-sm sm:text-base font-medium" id="websiteLink">https://dukcapil.tanimbar.go.id</a>
             </div>
            </div>
           </div>
@@ -488,19 +553,12 @@
           <div id="formSuccess" class="hidden mt-4 p-4 bg-green-50 border border-green-200 rounded-xl">
            <div class="flex items-center text-green-700">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg><span class="font-medium">Pesan berhasil dikirim! Kami akan segera menghubungi Anda.</span>
+            </svg><span class="font-medium">Pesan berhasil dikirim ke WhatsApp! Kami akan segera menghubungi Anda.</span>
            </div>
           </div>
-         </div><!-- Map Placeholder -->
-         <div class="mt-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 overflow-hidden">
-          <div class="bg-gradient-to-br from-[#0c2340]/10 to-[#1a4b8c]/10 rounded-xl h-48 flex items-center justify-center">
-           <div class="text-center">
-            <svg class="w-12 h-12 text-[#0c2340] mx-auto mb-3" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <p class="text-[#0c2340] font-medium">Lokasi Kantor Disdukcapil</p>
-            <p class="text-gray-500 text-sm">Saumlaki, Kepulauan Tanimbar</p>
-           </div>
-          </div>
+         </div><!-- Google Maps Embed -->
+         <div class="mt-6 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.3256!2d131.2738!3d-7.3889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d2755c0292f2a65%3A0x97d389f87f0d32!2sDinas%20Kependudukan%20dan%20Catatan%20Sipil%20Kabupaten%20Tanimbar!5e1!3m2!1sid!2sid!4v1640000000000" width="100%" height="300" style="border:none; border-radius: 0.75rem; display: block;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
          </div>
         </div>
        </div>
@@ -509,35 +567,9 @@
     </section>
    </main><!-- Footer -->
    <footer class="bg-[#0c2340] text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-     <div class="grid grid-cols-1 md:grid-cols-3 gap-8"><!-- Logo & Description -->
-      <div class="text-center md:text-left">
-       <div class="flex items-center justify-center md:justify-start space-x-3 mb-4"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPXt-P9njp2vMXPwB8l_WTtmd2cjwSRVMbwzDrWQrFvMdkHDApyArzSlTvdQUS5dgy3XMaJwXCvoIbTe40Y5z4rRflGGzqYaA5WeFdHdH-gPB9dbV81C5GIX7Ietdt2yYhJxhq-gHXIoxFAUyTtcrsdCiuumnSeA93ofv9224k-oCJRJLR_cu7aMxZDPuu/s320/1-removebg-preview(1).png" alt="Logo WALANGADUK" class="h-12 w-auto" loading="lazy" onerror="this.style.display='none';">
-        <div>
-         <h3 class="text-lg font-bold text-[#d4a853]">WALANGADUK</h3>
-         <p class="text-xs text-white/60">Kab. Kepulauan Tanimbar</p>
-        </div>
-       </div>
-       <p class="text-white/70 text-sm">Sistem pelayanan administrasi kependudukan berbasis digital untuk masyarakat Kabupaten Kepulauan Tanimbar.</p>
-      </div><!-- Quick Links -->
-      <div class="text-center">
-       <h4 class="font-semibold text-[#d4a853] mb-4">Navigasi Cepat</h4>
-       <nav class="space-y-2"><a href="#" onclick="navigateTo('beranda'); return false;" class="block text-white/70 hover:text-white transition-colors text-sm">Beranda</a> <a href="#" onclick="navigateTo('informasi'); return false;" class="block text-white/70 hover:text-white transition-colors text-sm">Informasi</a> <a href="#" onclick="navigateTo('tentang'); return false;" class="block text-white/70 hover:text-white transition-colors text-sm">Tentang Kami</a> <a href="#" onclick="navigateTo('kontak'); return false;" class="block text-white/70 hover:text-white transition-colors text-sm">Kontak Kami</a>
-       </nav>
-      </div><!-- Contact Info -->
-      <div class="text-center md:text-right">
-       <h4 class="font-semibold text-[#d4a853] mb-4">Hubungi Kami</h4>
-       <div class="space-y-2 text-sm text-white/70">
-        <p>📍 Jl. Ir. Soekarno No. 1, Saumlaki</p>
-        <p>📞 (0918) 21234</p>
-        <p>📧 disdukcapil@tanimbar.go.id</p>
-       </div>
-      </div>
-     </div><!-- Copyright -->
-     <div class="mt-8 pt-8 border-t border-white/10 text-center">
-      <p class="text-white/50 text-sm">© 2025 <span class="text-[#d4a853]">WALANGADUK</span> - Dinas Kependudukan dan Pencatatan Sipil Kabupaten Kepulauan Tanimbar</p>
-      <p class="text-white/30 text-xs mt-2">Sistem Pelayanan Administrasi Kependudukan Online</p>
-     </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+     <p class="text-white/80 text-sm">© 2025 <span class="text-[#d4a853] font-semibold">WALANGADUK</span> - Dinas Kependudukan dan Pencatatan Sipil Kabupaten Kepulauan Tanimbar</p>
+     <p class="text-white/60 text-xs mt-2">Sistem Pelayanan Administrasi Kependudukan Online</p>
     </div>
    </footer>
   </div>
@@ -548,6 +580,7 @@
       hero_subtitle: 'Pelayanan Administrasi Kependudukan Online',
       contact_phone: '(0918) 21234',
       contact_email: 'disdukcapil@tanimbar.go.id',
+      whatsapp_number: '+6281234567890',
       background_color: '#f9fafb',
       primary_color: '#0c2340',
       accent_color: '#d4a853',
@@ -575,6 +608,17 @@
           // Update contact email
           const contactEmail = document.getElementById('contactEmail');
           if (contactEmail) contactEmail.textContent = config.contact_email || defaultConfig.contact_email;
+          
+          // Update WhatsApp link
+          const whatsappLink = document.getElementById('whatsappLink');
+          if (whatsappLink) whatsappLink.textContent = config.whatsapp_number || defaultConfig.whatsapp_number;
+          
+          // Update footer contact info
+          const footerPhone = document.getElementById('footerPhone');
+          if (footerPhone) footerPhone.textContent = '📞 ' + (config.contact_phone || defaultConfig.contact_phone);
+          
+          const footerEmail = document.getElementById('footerEmail');
+          if (footerEmail) footerEmail.textContent = '📧 ' + (config.contact_email || defaultConfig.contact_email);
         },
         mapToCapabilities: (config) => ({
           recolorables: [
@@ -607,7 +651,8 @@
           ['hero_title', config.hero_title || defaultConfig.hero_title],
           ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
           ['contact_phone', config.contact_phone || defaultConfig.contact_phone],
-          ['contact_email', config.contact_email || defaultConfig.contact_email]
+          ['contact_email', config.contact_email || defaultConfig.contact_email],
+          ['whatsapp_number', config.whatsapp_number || defaultConfig.whatsapp_number]
         ])
       });
     }
@@ -783,6 +828,20 @@
       
       const form = document.getElementById('contactForm');
       const successMessage = document.getElementById('formSuccess');
+      const nama = document.getElementById('nama').value;
+      const email = document.getElementById('email').value;
+      const subjek = document.getElementById('subjek').value;
+      const pesan = document.getElementById('pesan').value;
+      
+      // Get WhatsApp number (or use default)
+      const whatsappNumber = defaultConfig.whatsapp_number || '+6281234567890';
+      const cleanNumber = whatsappNumber.replace(/\D/g, '');
+      
+      // Create WhatsApp message
+      const whatsappMessage = `Halo WALANGADUK%0A%0ANama: ${nama}%0AEmail: ${email}%0ASubjek: ${subjek}%0APesan: ${pesan}`;
+      
+      // Open WhatsApp
+      window.open(`https://wa.me/${cleanNumber}?text=${whatsappMessage}`, '_blank');
       
       // Show success message
       successMessage.classList.remove('hidden');
@@ -795,6 +854,13 @@
         successMessage.classList.add('hidden');
       }, 5000);
     }
+
+    // Send WhatsApp message directly
+    function sendWhatsAppMessage() {
+      const whatsappNumber = defaultConfig.whatsapp_number || '+6281234567890';
+      const cleanNumber = whatsappNumber.replace(/\D/g, '');
+      window.open(`https://wa.me/${cleanNumber}?text=Assalamu%27alaikum%20WALANGADUK`, '_blank');
+    }
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d97952534025fb3',t:'MTc3MzAzMzEyNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d97d1f5b208c26b',t:'MTc3MzAzNTYxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
